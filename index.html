@@ -906,6 +906,136 @@
     .tl-content h4 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
     .tl-content p { font-size: 0.85rem; color: var(--text-sub); line-height: 1.65; }
     .tl-date { font-size: 0.75rem; color: var(--primary-light); font-weight: 600; margin-bottom: 4px; }
+
+    /* ─── HOOKING DESIGN ENHANCEMENTS ─── */
+
+    /* 히어로 숫자 카운터 강조 */
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 32px 0 40px;
+    }
+    .hero-stat {
+      text-align: center;
+    }
+    .hero-stat .num {
+      display: block;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 900;
+      background: linear-gradient(135deg, #F59E0B, #EC4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1;
+    }
+    .hero-stat .label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-top: 4px;
+      display: block;
+    }
+
+    /* 섹션 타이틀 강조 라인 */
+    .section-title-accent {
+      position: relative;
+      display: inline-block;
+    }
+    .section-title-accent::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #7C3AED, #EC4899, #F59E0B);
+      border-radius: 2px;
+    }
+
+    /* 커리큘럼 카드 번호 강조 */
+    .track-num {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      color: var(--primary-light);
+      opacity: 0.7;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    /* 글로우 효과 카드 */
+    .curr-card.c1 { box-shadow: 0 0 0 1px rgba(124,58,237,0.2), 0 8px 32px rgba(124,58,237,0.1); }
+    .curr-card.c2 { box-shadow: 0 0 0 1px rgba(236,72,153,0.2), 0 8px 32px rgba(236,72,153,0.1); }
+    .curr-card.c3 { box-shadow: 0 0 0 1px rgba(45,212,191,0.2), 0 8px 32px rgba(45,212,191,0.1); }
+    .curr-card.c1:hover { box-shadow: 0 0 0 1px rgba(124,58,237,0.5), 0 20px 60px rgba(124,58,237,0.3); }
+    .curr-card.c2:hover { box-shadow: 0 0 0 1px rgba(236,72,153,0.5), 0 20px 60px rgba(236,72,153,0.3); }
+    .curr-card.c3:hover { box-shadow: 0 0 0 1px rgba(45,212,191,0.5), 0 20px 60px rgba(45,212,191,0.3); }
+
+    /* 강조 배너 (수강 자격) */
+    .qual-banner {
+      background: linear-gradient(135deg, rgba(124,58,237,0.25) 0%, rgba(236,72,153,0.2) 100%);
+      border: 1px solid rgba(167,139,250,0.5);
+      box-shadow: 0 0 40px rgba(124,58,237,0.15), inset 0 1px 0 rgba(255,255,255,0.05);
+    }
+
+    /* benefit-highlight 카드 */
+    .benefit-highlight {
+      background: linear-gradient(135deg, rgba(124,58,237,0.2), rgba(245,158,11,0.15)) !important;
+      border: 1px solid rgba(245,158,11,0.4) !important;
+      position: relative;
+      overflow: hidden;
+    }
+    .benefit-highlight::before {
+      content: '🔥 NEW';
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      font-size: 0.65rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #F59E0B, #EC4899);
+      color: #fff;
+      padding: 3px 8px;
+      border-radius: 20px;
+      letter-spacing: 1px;
+    }
+
+    /* 섹션 배경 교차 강화 */
+    .benefits-section {
+      background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(124,58,237,0.05) 50%, var(--bg-dark) 100%);
+    }
+
+    /* 수강료 카드 글로우 */
+    .pricing-card {
+      box-shadow: 0 0 0 1px rgba(124,58,237,0.3), 0 20px 80px rgba(124,58,237,0.2), 0 0 120px rgba(236,72,153,0.1);
+    }
+
+    /* 히어로 텍스트 강조 마커 */
+    .text-highlight {
+      background: linear-gradient(135deg, rgba(245,158,11,0.2), rgba(236,72,153,0.2));
+      border-radius: 6px;
+      padding: 2px 8px;
+      border: 1px solid rgba(245,158,11,0.3);
+    }
+
+    /* 수강 자격 배너 펄스 */
+    @keyframes borderPulse {
+      0%, 100% { border-color: rgba(167,139,250,0.4); box-shadow: 0 0 20px rgba(124,58,237,0.1); }
+      50% { border-color: rgba(245,158,11,0.6); box-shadow: 0 0 30px rgba(245,158,11,0.15); }
+    }
+    .qual-banner { animation: borderPulse 3s ease-in-out infinite; }
+
+    /* 툴 섹션 배경 강화 */
+    .tools-section {
+      background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(124,58,237,0.08) 0%, transparent 70%), var(--bg-card);
+    }
+
+    /* 히어로 서브타이틀 강조 */
+    .hero-sub .accent-word {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
   </style>
 </head>
 <body>
@@ -944,13 +1074,29 @@
       그림책 · 전자책 · 시화집부터 <strong>AI 영상 제작</strong>과 <strong>AI 아트</strong>까지<br/>
       하나의 과정으로 완성하는 창작 올인원 클래스
     </p>
-    <div class="hero-notice">
-      ⚠️ 캔바강사심화과정 이수자만 수강 가능한 심화 과정입니다
-    </div>
+
     <div class="hero-date">
       <div class="date-chip"><span>개강일</span>2026년 4월 24일 (금)</div>
       <div class="date-chip"><span>수업 방식</span>ZOOM 온라인 · 저녁 8시</div>
       <div class="date-chip"><span>수강료</span>20만원</div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="num">4회</span>
+        <span class="label">ZOOM 라이브 수업</span>
+      </div>
+      <div class="hero-stat">
+        <span class="num">3개</span>
+        <span class="label">핵심 트랙</span>
+      </div>
+      <div class="hero-stat">
+        <span class="num">30+</span>
+        <span class="label">AI 아트 작품 제작</span>
+      </div>
+      <div class="hero-stat">
+        <span class="num">∞</span>
+        <span class="label">녹화본 무제한 복습</span>
+      </div>
     </div>
     <div class="btn-group">
       <a href="#apply" class="btn-primary">✨ 수강 신청하기</a>
@@ -962,7 +1108,7 @@
 <!-- QUALIFICATION BANNER -->
 <section style="padding: 60px 5%;">
   <div class="qual-banner fade-up">
-    <div class="qual-icon">🎓</div>
+    <div class="qual-icon" style="background: linear-gradient(135deg, #F59E0B, #EC4899);">🔑</div>
     <div class="qual-text">
       <h3>수강 자격 안내</h3>
       <p>본 과정은 <strong>캔바강사심화과정 이수자</strong>만 신청 가능합니다.<br/>
@@ -986,9 +1132,9 @@
       <div class="curr-num">TRACK 01</div>
       <span class="curr-icon">📚</span>
       <h3>AI 출판 아이디어</h3>
-      <p class="curr-desc">그림책, 전자책, 시화집 등 다양한 형태의 책을 AI로 기획하고 제작합니다. 복잡한 프롬프트 없이 캔바와 비밀 AI 툴만으로 나만의 출판물을 완성하세요.</p>
+      <p class="curr-desc">그림책, 전자책, 시화집 등 다양한 형태의 책을 AI로 기획하고 제작합니다. 복잡한 프롬프트 없이 캔바와 최신 AI 툴 기반으로 나만의 출판물을 완성하세요.</p>
       <ul class="curr-detail-list">
-        <li>AI 이미지 생성 툴 실습 (비밀 AI 툴 공개)</li>
+        <li>AI 이미지 생성 툴 실습 (최신 AI 툴 기반)</li>
         <li>그림책 스토리 기획 및 이미지 제작</li>
         <li>전자책 레이아웃 설계 (캔바 활용)</li>
         <li>시화집 · 컬러링북 제작 실습</li>
@@ -1075,7 +1221,7 @@
 <section id="benefits">
   <div class="center fade-up">
     <span class="section-label">WHAT YOU GET</span>
-    <h2 class="section-title">이 과정을 수강하면<br/>이런 것들을 얻어가요</h2>
+    <h2 class="section-title"><span class="section-title-accent">이 과정을 수강하면</span><br/>이런 것들을 얻어가요</h2>
   </div>
   <div class="benefits-grid">
     <div class="benefit-item fade-up">
@@ -1107,6 +1253,11 @@
       <span class="benefit-emoji">🎓</span>
       <h4>강사 활동 가능</h4>
       <p>수료 후 그림책 만들기 강의를 직접 진행할 수 있는 역량을 키웁니다</p>
+    </div>
+    <div class="benefit-item fade-up benefit-highlight">
+      <span class="benefit-emoji">🚀</span>
+      <h4>최신 AI 트렌드 습득</h4>
+      <p>빠르게 변하는 AI 시장의 최신 트렌드와 핵심 툴을 현장 강사에게 직접 배웁니다</p>
     </div>
   </div>
 </section>
@@ -1231,9 +1382,8 @@
   <div class="tools-grid">
     <div class="tool-pill"><span class="dot" style="background:#A78BFA;"></span> Canva (캔바)</div>
     <div class="tool-pill"><span class="dot" style="background:#F59E0B;"></span> 캔바 매직미디어</div>
-    <div class="tool-pill"><span class="dot" style="background:#EC4899;"></span> 비밀 AI 이미지 툴</div>
-    <div class="tool-pill"><span class="dot" style="background:#2DD4BF;"></span> AI 영상 제작 툴</div>
-    <div class="tool-pill"><span class="dot" style="background:#F97316;"></span> 생성형 AI 이미지 툴</div>
+    <div class="tool-pill"><span class="dot" style="background:#EC4899;"></span> 생성형AI 이미지&동영상 제작 플랫폼</div>
+    <div class="tool-pill"><span class="dot" style="background:#2DD4BF;"></span> 동영상 편집 툴</div>
     <div class="tool-pill"><span class="dot" style="background:#60A5FA;"></span> 북퍼브 / 유페이퍼</div>
     <div class="tool-pill"><span class="dot" style="background:#34D399;"></span> 아마존 KDP</div>
     <div class="tool-pill"><span class="dot" style="background:#A78BFA;"></span> POD 굿즈 플랫폼</div>
