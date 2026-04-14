@@ -308,10 +308,153 @@
     /* ── 우측 비주얼 카드 스택 ── */
     .hero-right {
       position: relative;
-      height: 480px;
+      height: 520px;
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+
+    /* ─── 일러스트 이미지 ─── */
+    .hero-illust-wrap {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .hero-illust-img {
+      width: 340px;
+      height: auto;
+      position: relative;
+      z-index: 2;
+      filter: drop-shadow(0 20px 60px rgba(124,58,237,0.35));
+      animation: illust-float 5s ease-in-out infinite;
+    }
+    @keyframes illust-float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+    }
+
+    /* ─── AI 로고 뱃지 ─── */
+    .ai-badge {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 50px;
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #fff;
+      z-index: 10;
+      white-space: nowrap;
+      cursor: default;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .ai-badge:hover {
+      transform: scale(1.08) !important;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    }
+    .ai-badge-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    /* Gemini */
+    .badge-gemini {
+      top: 18px; left: -30px;
+      background: linear-gradient(135deg, rgba(66,133,244,0.85), rgba(52,168,83,0.75));
+      animation: badge-float-1 4.5s ease-in-out infinite;
+    }
+    .badge-gemini .ai-badge-icon {
+      background: linear-gradient(135deg, #4285F4, #34A853);
+    }
+
+    /* ChatGPT */
+    .badge-chatgpt {
+      top: 80px; right: -35px;
+      background: linear-gradient(135deg, rgba(16,163,127,0.85), rgba(0,120,100,0.75));
+      animation: badge-float-2 5.5s ease-in-out infinite;
+    }
+    .badge-chatgpt .ai-badge-icon {
+      background: linear-gradient(135deg, #10A37F, #007864);
+    }
+
+    /* Canva */
+    .badge-canva {
+      bottom: 130px; left: -40px;
+      background: linear-gradient(135deg, rgba(0,196,204,0.85), rgba(123,97,255,0.75));
+      animation: badge-float-3 6s ease-in-out infinite;
+    }
+    .badge-canva .ai-badge-icon {
+      background: linear-gradient(135deg, #00C4CC, #7B61FF);
+    }
+
+    /* 수익 뱃지 */
+    .badge-income {
+      bottom: 60px; right: -30px;
+      background: linear-gradient(135deg, rgba(245,158,11,0.9), rgba(239,68,68,0.75));
+      animation: badge-float-4 5s ease-in-out infinite;
+    }
+    .badge-income .ai-badge-icon {
+      background: linear-gradient(135deg, #F59E0B, #EF4444);
+    }
+
+    /* 출판 뱃지 */
+    .badge-book {
+      top: 170px; left: -50px;
+      background: linear-gradient(135deg, rgba(236,72,153,0.85), rgba(167,139,250,0.75));
+      animation: badge-float-5 7s ease-in-out infinite;
+    }
+    .badge-book .ai-badge-icon {
+      background: linear-gradient(135deg, #EC4899, #A78BFA);
+    }
+
+    @keyframes badge-float-1 {
+      0%, 100% { transform: translateY(0px) rotate(-2deg); }
+      50% { transform: translateY(-10px) rotate(1deg); }
+    }
+    @keyframes badge-float-2 {
+      0%, 100% { transform: translateY(0px) rotate(2deg); }
+      50% { transform: translateY(-14px) rotate(-1deg); }
+    }
+    @keyframes badge-float-3 {
+      0%, 100% { transform: translateY(0px) rotate(-1deg); }
+      50% { transform: translateY(-8px) rotate(2deg); }
+    }
+    @keyframes badge-float-4 {
+      0%, 100% { transform: translateY(0px) rotate(1deg); }
+      50% { transform: translateY(-12px) rotate(-2deg); }
+    }
+    @keyframes badge-float-5 {
+      0%, 100% { transform: translateY(0px) rotate(-3deg); }
+      50% { transform: translateY(-9px) rotate(1deg); }
+    }
+
+    /* 배경 글로우 */
+    .hero-illust-glow {
+      position: absolute;
+      width: 380px; height: 380px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(124,58,237,0.25) 0%, transparent 70%);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      animation: glow-pulse 4s ease-in-out infinite;
+    }
+    @keyframes glow-pulse {
+      0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+      50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
     }
 
     .hero-visual-card {
@@ -1529,42 +1672,40 @@
 
     <!-- 우측: 비주얼 카드 스택 -->
     <div class="hero-right">
-      <div class="hero-glow-ring"></div>
+      <!-- 배경 글로우 -->
+      <div class="hero-illust-glow"></div>
 
-      <!-- 메인 카드 -->
-      <div class="hero-visual-card hvc-main">
-        <div class="card-tag">✦ AI ALL-IN-ONE</div>
-        <div class="card-title">캔바AI연구소<br/>올인원 과정</div>
-        <div class="card-desc">AI로 책을 쓰고, 영상을 만들고,<br/>전시회를 여는 창작자가 됩니다</div>
-        <div class="card-pills">
-          <span class="card-pill">📚 AI 출판</span>
-          <span class="card-pill">🎬 AI 영상</span>
-          <span class="card-pill">🎨 AI 아트</span>
+      <!-- 일러스트 래퍼 -->
+      <div class="hero-illust-wrap">
+
+        <!-- AI 툴 뱃지들 -->
+        <div class="ai-badge badge-gemini">
+          <div class="ai-badge-icon">✦</div>
+          <span>Gemini AI</span>
         </div>
-      </div>
 
-      <!-- 카드 1: AI 출판 -->
-      <div class="hero-visual-card hvc-1">
-        <span class="hvc-icon">📚</span>
-        <div class="hvc-label" style="color:#F9A8D4;">AI 출판</div>
-        <div class="hvc-title" style="color:#fff;">그림책 · 전자책<br/>시화집 제작</div>
-        <div class="hvc-sub" style="color:#FBCFE8;">캔바 + AI로 나만의 책 출판</div>
-      </div>
+        <div class="ai-badge badge-chatgpt">
+          <div class="ai-badge-icon" style="font-size:0.9rem;">⬡</div>
+          <span>ChatGPT</span>
+        </div>
 
-      <!-- 카드 2: AI 영상 -->
-      <div class="hero-visual-card hvc-2">
-        <span class="hvc-icon">🎬</span>
-        <div class="hvc-label" style="color:#5EEAD4;">AI 영상</div>
-        <div class="hvc-title" style="color:#fff;">SNS · 유튜브<br/>영상 제작</div>
-        <div class="hvc-sub" style="color:#99F6E4;">스크립트부터 편집까지 AI로</div>
-      </div>
+        <div class="ai-badge badge-canva">
+          <div class="ai-badge-icon">◈</div>
+          <span>Canva AI</span>
+        </div>
 
-      <!-- 카드 3: AI 아트 -->
-      <div class="hero-visual-card hvc-3">
-        <span class="hvc-icon">🎨</span>
-        <div class="hvc-label" style="color:#FDE68A;">AI 아트</div>
-        <div class="hvc-title" style="color:#fff;">디지털 아트<br/>전시회 개최</div>
-        <div class="hvc-sub" style="color:#FEF3C7;">온라인 · 오프라인 전시</div>
+        <div class="ai-badge badge-income">
+          <div class="ai-badge-icon">💰</div>
+          <span>수익 창출</span>
+        </div>
+
+        <div class="ai-badge badge-book">
+          <div class="ai-badge-icon">📚</div>
+          <span>AI 그림책 출판</span>
+        </div>
+
+        <!-- 메인 일러스트 이미지 -->
+        <img src="hero_woman.png" alt="AI 노마드 창작자" class="hero-illust-img" />
       </div>
     </div>
   </div>
