@@ -308,10 +308,11 @@
     /* ── 우측 비주얼 카드 스택 ── */
     .hero-right {
       position: relative;
-      height: 520px;
+      height: 560px;
       display: flex;
       align-items: center;
       justify-content: center;
+      overflow: visible;
     }
 
     /* ─── 일러스트 이미지 ─── */
@@ -323,56 +324,72 @@
       align-items: flex-end;
       justify-content: center;
     }
+    /* 하단 페이드 마스크 - 배경과 자연스럽게 블렌딩 */
+    .hero-illust-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 120px;
+      background: linear-gradient(to top, var(--bg-primary, #0D0A1E) 0%, transparent 100%);
+      z-index: 3;
+      pointer-events: none;
+    }
     .hero-illust-img {
-      width: 340px;
+      width: 380px;
       height: auto;
       position: relative;
       z-index: 2;
-      filter: drop-shadow(0 20px 60px rgba(124,58,237,0.35));
+      filter: drop-shadow(0 30px 80px rgba(124,58,237,0.55)) drop-shadow(0 0 40px rgba(167,139,250,0.3));
       animation: illust-float 5s ease-in-out infinite;
+      mix-blend-mode: normal;
     }
     @keyframes illust-float {
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-12px); }
     }
 
-    /* ─── AI 로고 뱃지 ─── */
+    /* ─── AI 로고 뱃지 - 글래스모피즘 프리미엄 ─── */
     .ai-badge {
       position: absolute;
       display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 10px 16px;
-      border-radius: 50px;
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(255,255,255,0.2);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-      font-size: 0.82rem;
+      gap: 10px;
+      padding: 11px 18px;
+      border-radius: 100px;
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(255,255,255,0.25);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.2);
+      font-size: 0.83rem;
       font-weight: 700;
       color: #fff;
       z-index: 10;
       white-space: nowrap;
       cursor: default;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease;
+      letter-spacing: 0.02em;
     }
     .ai-badge:hover {
-      transform: scale(1.08) !important;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+      transform: scale(1.1) translateY(-3px) !important;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.3);
     }
     .ai-badge-icon {
-      width: 28px;
-      height: 28px;
-      border-radius: 8px;
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1rem;
       flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
 
     /* Gemini */
     .badge-gemini {
-      top: 18px; left: -30px;
+      top: 30px; left: -20px;
       background: linear-gradient(135deg, rgba(66,133,244,0.85), rgba(52,168,83,0.75));
       animation: badge-float-1 4.5s ease-in-out infinite;
     }
@@ -382,7 +399,7 @@
 
     /* ChatGPT */
     .badge-chatgpt {
-      top: 80px; right: -35px;
+      top: 60px; right: -15px;
       background: linear-gradient(135deg, rgba(16,163,127,0.85), rgba(0,120,100,0.75));
       animation: badge-float-2 5.5s ease-in-out infinite;
     }
@@ -392,7 +409,7 @@
 
     /* Canva */
     .badge-canva {
-      bottom: 130px; left: -40px;
+      bottom: 160px; left: -25px;
       background: linear-gradient(135deg, rgba(0,196,204,0.85), rgba(123,97,255,0.75));
       animation: badge-float-3 6s ease-in-out infinite;
     }
@@ -402,7 +419,7 @@
 
     /* 수익 뱃지 */
     .badge-income {
-      bottom: 60px; right: -30px;
+      bottom: 90px; right: -20px;
       background: linear-gradient(135deg, rgba(245,158,11,0.9), rgba(239,68,68,0.75));
       animation: badge-float-4 5s ease-in-out infinite;
     }
@@ -412,7 +429,7 @@
 
     /* 출판 뱃지 */
     .badge-book {
-      top: 170px; left: -50px;
+      top: 200px; left: -35px;
       background: linear-gradient(135deg, rgba(236,72,153,0.85), rgba(167,139,250,0.75));
       animation: badge-float-5 7s ease-in-out infinite;
     }
@@ -444,13 +461,23 @@
     /* 배경 글로우 */
     .hero-illust-glow {
       position: absolute;
-      width: 380px; height: 380px;
+      width: 500px; height: 500px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(124,58,237,0.25) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(139,92,246,0.35) 0%, rgba(124,58,237,0.18) 40%, transparent 70%);
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
       z-index: 1;
       animation: glow-pulse 4s ease-in-out infinite;
+    }
+    /* 보조 글로우 - 핑크 */
+    .hero-illust-glow::before {
+      content: '';
+      position: absolute;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(236,72,153,0.2) 0%, transparent 70%);
+      top: 20%; left: 30%;
+      transform: translate(-50%, -50%);
     }
     @keyframes glow-pulse {
       0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
@@ -1678,19 +1705,31 @@
       <!-- 일러스트 래퍼 -->
       <div class="hero-illust-wrap">
 
-        <!-- AI 툴 뱃지들 -->
+        <!-- AI 툴 뱃지들 - 프리미엄 글래스모피즘 -->
         <div class="ai-badge badge-gemini">
-          <div class="ai-badge-icon">✦</div>
+          <div class="ai-badge-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z" fill="white"/>
+            </svg>
+          </div>
           <span>Gemini AI</span>
         </div>
 
         <div class="ai-badge badge-chatgpt">
-          <div class="ai-badge-icon" style="font-size:0.9rem;">⬡</div>
+          <div class="ai-badge-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+              <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/>
+            </svg>
+          </div>
           <span>ChatGPT</span>
         </div>
 
         <div class="ai-badge badge-canva">
-          <div class="ai-badge-icon">◈</div>
+          <div class="ai-badge-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248c-.457 0-.87.189-1.17.494l-2.667 2.667-1.333-1.333c.305-.3.494-.713.494-1.17 0-.91-.738-1.648-1.648-1.648-.91 0-1.648.738-1.648 1.648 0 .457.189.87.494 1.17L8.75 12.41l-2.667-2.667c-.3-.305-.713-.494-1.17-.494-.91 0-1.648.738-1.648 1.648 0 .91.738 1.648 1.648 1.648.457 0 .87-.189 1.17-.494l2.667 2.667-2.667 2.667c-.3.3-.494.713-.494 1.17 0 .91.738 1.648 1.648 1.648.91 0 1.648-.738 1.648-1.648 0-.457-.189-.87-.494-1.17l2.667-2.667 1.333 1.333c-.305.3-.494.713-.494 1.17 0 .91.738 1.648 1.648 1.648.91 0 1.648-.738 1.648-1.648 0-.457-.189-.87-.494-1.17l1.333-1.333 2.667 2.667c.3.305.713.494 1.17.494.91 0 1.648-.738 1.648-1.648 0-.91-.738-1.648-1.648-1.648-.457 0-.87.189-1.17.494l-2.667-2.667 2.667-2.667c.3-.3.494-.713.494-1.17 0-.91-.738-1.648-1.648-1.648z"/>
+            </svg>
+          </div>
           <span>Canva AI</span>
         </div>
 
@@ -1700,12 +1739,12 @@
         </div>
 
         <div class="ai-badge badge-book">
-          <div class="ai-badge-icon">📚</div>
+          <div class="ai-badge-icon">📖</div>
           <span>AI 그림책 출판</span>
         </div>
 
         <!-- 메인 일러스트 이미지 -->
-        <img src="hero_woman.png" alt="AI 노마드 창작자" class="hero-illust-img" />
+        <img src="hero_woman_nobg.png" alt="AI 노마드 창작자" class="hero-illust-img" />
       </div>
     </div>
   </div>
