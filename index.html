@@ -11,19 +11,19 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --primary: #7C3AED;
-      --primary-light: #A78BFA;
-      --primary-dark: #5B21B6;
-      --accent: #F59E0B;
+      --primary: #6366F1;
+      --primary-light: #A5B4FC;
+      --primary-dark: #4338CA;
+      --accent: #F97316;
       --accent2: #EC4899;
-      --bg-dark: #160D2E;
-      --bg-card: #1F1445;
-      --bg-card2: #241850;
-      --text-main: #F3F0FF;
-      --text-sub: #D4C8FF;
-      --text-muted: #A89FCC;
-      --gold: #F6C90E;
-      --teal: #2DD4BF;
+      --bg-dark: #0F0F1A;
+      --bg-card: #16162A;
+      --bg-card2: #1C1C35;
+      --text-main: #F0F0FF;
+      --text-sub: #C7C9F0;
+      --text-muted: #9899C8;
+      --gold: #FBBF24;
+      --teal: #34D399;
     }
 
     html { scroll-behavior: smooth; }
@@ -41,9 +41,9 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(15, 10, 30, 0.85);
+      background: rgba(10, 10, 24, 0.88);
       backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(124, 58, 237, 0.25);
+      border-bottom: 1px solid rgba(99, 102, 241, 0.25);
       padding: 14px 5%;
       display: flex;
       align-items: center;
@@ -52,7 +52,7 @@
     .logo {
       font-size: 1.15rem;
       font-weight: 800;
-      background: linear-gradient(135deg, #A78BFA, #F59E0B);
+      background: linear-gradient(135deg, #A5B4FC, #F97316);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       letter-spacing: -0.5px;
@@ -121,11 +121,11 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 70% 80% at 15% 50%, rgba(109,40,217,0.55) 0%, transparent 65%),
-        radial-gradient(ellipse 60% 60% at 85% 20%, rgba(236,72,153,0.35) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 50% at 80% 80%, rgba(45,212,191,0.2) 0%, transparent 55%),
-        radial-gradient(ellipse 40% 40% at 50% 100%, rgba(124,58,237,0.3) 0%, transparent 60%),
-        #0D0620;
+        radial-gradient(ellipse 70% 80% at 15% 50%, rgba(99,102,241,0.5) 0%, transparent 65%),
+        radial-gradient(ellipse 60% 60% at 85% 20%, rgba(249,115,22,0.25) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 80% 80%, rgba(52,211,153,0.18) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 40% at 50% 100%, rgba(99,102,241,0.28) 0%, transparent 60%),
+        #0A0A18;
       animation: meshMove 12s ease-in-out infinite;
     }
 
@@ -135,9 +135,9 @@
       filter: blur(90px);
       animation: float 8s ease-in-out infinite;
     }
-    .hero-orb-1 { width: 600px; height: 600px; background: rgba(109,40,217,0.3); top: -150px; left: -150px; animation-delay: 0s; }
-    .hero-orb-2 { width: 450px; height: 450px; background: rgba(236,72,153,0.2); bottom: -100px; right: -100px; animation-delay: 3s; }
-    .hero-orb-3 { width: 350px; height: 350px; background: rgba(45,212,191,0.15); top: 30%; left: 55%; animation-delay: 5s; }
+    .hero-orb-1 { width: 600px; height: 600px; background: rgba(99,102,241,0.28); top: -150px; left: -150px; animation-delay: 0s; }
+    .hero-orb-2 { width: 450px; height: 450px; background: rgba(249,115,22,0.18); bottom: -100px; right: -100px; animation-delay: 3s; }
+    .hero-orb-3 { width: 350px; height: 350px; background: rgba(52,211,153,0.12); top: 30%; left: 55%; animation-delay: 5s; }
 
     /* 2단 레이아웃 */
     .hero-inner {
@@ -165,7 +165,7 @@
       padding: 8px 18px;
       font-size: 0.8rem;
       font-weight: 700;
-      color: #C4B5FD;
+      color: #C7D2FE;
       margin-bottom: 24px;
       letter-spacing: 0.5px;
     }
@@ -194,7 +194,7 @@
     }
     .hero h1 em {
       font-style: normal;
-      background: linear-gradient(135deg, #F59E0B 0%, #EC4899 50%, #A78BFA 100%);
+      background: linear-gradient(135deg, #F97316 0%, #EC4899 45%, #A5B4FC 100%);
       background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -273,7 +273,7 @@
 
     .btn-group { display: flex; gap: 12px; flex-wrap: wrap; }
     .btn-primary {
-      background: linear-gradient(135deg, #7C3AED, #EC4899);
+      background: linear-gradient(135deg, #6366F1, #EC4899);
       color: #fff;
       border: none;
       padding: 16px 38px;
@@ -286,13 +286,13 @@
       align-items: center;
       gap: 8px;
       transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 8px 32px rgba(124,58,237,0.45);
+      box-shadow: 0 8px 32px rgba(99,102,241,0.45);
       letter-spacing: -0.3px;
     }
-    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 44px rgba(124,58,237,0.6); }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 44px rgba(99,102,241,0.6); }
     .btn-outline {
       background: rgba(255,255,255,0.06);
-      color: #C4B5FD;
+      color: #C7D2FE;
       border: 1.5px solid rgba(167,139,250,0.4);
       padding: 15px 32px;
       border-radius: 12px;
@@ -332,7 +332,7 @@
       left: 0;
       right: 0;
       height: 120px;
-      background: linear-gradient(to top, var(--bg-primary, #0D0A1E) 0%, transparent 100%);
+      background: linear-gradient(to top, #0A0A18 0%, transparent 100%);
       z-index: 3;
       pointer-events: none;
     }
@@ -341,7 +341,7 @@
       height: auto;
       position: relative;
       z-index: 2;
-      filter: drop-shadow(0 30px 80px rgba(124,58,237,0.55)) drop-shadow(0 0 40px rgba(167,139,250,0.3));
+      filter: drop-shadow(0 30px 80px rgba(99,102,241,0.55)) drop-shadow(0 0 40px rgba(165,180,252,0.3));
       animation: illust-float 5s ease-in-out infinite;
       mix-blend-mode: normal;
     }
@@ -376,8 +376,8 @@
       box-shadow: 0 16px 48px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.3);
     }
     .ai-badge-icon {
-      width: 30px;
-      height: 30px;
+      width: 32px;
+      height: 32px;
       border-radius: 10px;
       display: flex;
       align-items: center;
@@ -385,56 +385,81 @@
       font-size: 1rem;
       flex-shrink: 0;
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      overflow: hidden;
+      background: transparent;
+    }
+    .ai-badge-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
     }
 
     /* Gemini */
     .badge-gemini {
       top: 30px; left: -20px;
-      background: linear-gradient(135deg, rgba(66,133,244,0.85), rgba(52,168,83,0.75));
+      background: linear-gradient(135deg, rgba(66,133,244,0.9) 0%, rgba(52,168,83,0.8) 100%);
+      border-color: rgba(255,255,255,0.3);
       animation: badge-float-1 4.5s ease-in-out infinite;
     }
     .badge-gemini .ai-badge-icon {
-      background: linear-gradient(135deg, #4285F4, #34A853);
+      background: transparent;
     }
 
     /* ChatGPT */
     .badge-chatgpt {
       top: 60px; right: -15px;
-      background: linear-gradient(135deg, rgba(16,163,127,0.85), rgba(0,120,100,0.75));
+      background: linear-gradient(135deg, rgba(16,163,127,0.9) 0%, rgba(0,120,100,0.8) 100%);
+      border-color: rgba(255,255,255,0.3);
       animation: badge-float-2 5.5s ease-in-out infinite;
     }
     .badge-chatgpt .ai-badge-icon {
-      background: linear-gradient(135deg, #10A37F, #007864);
+      background: #10A37F;
+      border-radius: 8px;
     }
 
     /* Canva */
     .badge-canva {
       bottom: 160px; left: -25px;
-      background: linear-gradient(135deg, rgba(0,196,204,0.85), rgba(123,97,255,0.75));
+      background: linear-gradient(135deg, rgba(0,196,204,0.9) 0%, rgba(123,97,255,0.8) 100%);
+      border-color: rgba(255,255,255,0.3);
       animation: badge-float-3 6s ease-in-out infinite;
     }
     .badge-canva .ai-badge-icon {
-      background: linear-gradient(135deg, #00C4CC, #7B61FF);
+      background: transparent;
     }
 
     /* 수익 뱃지 */
     .badge-income {
       bottom: 90px; right: -20px;
-      background: linear-gradient(135deg, rgba(245,158,11,0.9), rgba(239,68,68,0.75));
+      background: linear-gradient(135deg, rgba(249,115,22,0.92) 0%, rgba(239,68,68,0.8) 100%);
+      border-color: rgba(255,255,255,0.3);
       animation: badge-float-4 5s ease-in-out infinite;
     }
     .badge-income .ai-badge-icon {
-      background: linear-gradient(135deg, #F59E0B, #EF4444);
+      background: transparent;
     }
 
-    /* 출판 뱃지 */
-    .badge-book {
+    /* Claude 뱃지 */
+    .badge-claude {
       top: 200px; left: -35px;
-      background: linear-gradient(135deg, rgba(236,72,153,0.85), rgba(167,139,250,0.75));
+      background: linear-gradient(135deg, rgba(205,100,60,0.92) 0%, rgba(235,140,100,0.82) 100%);
+      border-color: rgba(255,255,255,0.3);
       animation: badge-float-5 7s ease-in-out infinite;
     }
-    .badge-book .ai-badge-icon {
-      background: linear-gradient(135deg, #EC4899, #A78BFA);
+    .badge-claude .ai-badge-icon {
+      background: transparent;
+    }
+
+    /* Midjourney 뱃지 */
+    .badge-midjourney {
+      bottom: 90px; right: -20px;
+      background: linear-gradient(135deg, rgba(30,30,40,0.92) 0%, rgba(60,60,80,0.85) 100%);
+      border-color: rgba(255,255,255,0.3);
+      animation: badge-float-4 5s ease-in-out infinite;
+    }
+    .badge-midjourney .ai-badge-icon {
+      background: transparent;
     }
 
     @keyframes badge-float-1 {
@@ -463,7 +488,7 @@
       position: absolute;
       width: 500px; height: 500px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(139,92,246,0.35) 0%, rgba(124,58,237,0.18) 40%, transparent 70%);
+      background: radial-gradient(circle, rgba(99,102,241,0.35) 0%, rgba(99,102,241,0.15) 40%, transparent 70%);
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
       z-index: 1;
@@ -504,14 +529,14 @@
     }
     .hvc-main .card-tag {
       font-size: 0.68rem; font-weight: 800; letter-spacing: 2px;
-      color: #C4B5FD; text-transform: uppercase; margin-bottom: 12px;
+      color: #C7D2FE; text-transform: uppercase; margin-bottom: 12px;
     }
     .hvc-main .card-title {
       font-size: 1.3rem; font-weight: 900; color: #fff;
       line-height: 1.3; margin-bottom: 10px;
     }
     .hvc-main .card-desc {
-      font-size: 0.78rem; color: #C4B5FD; line-height: 1.6; margin-bottom: 18px;
+      font-size: 0.78rem; color: #C7D2FE; line-height: 1.6; margin-bottom: 18px;
     }
     .hvc-main .card-pills {
       display: flex; flex-wrap: wrap; gap: 6px;
@@ -767,7 +792,7 @@
       top: 0; left: 0; right: 0;
       height: 3px;
     }
-    .curr-card.c1::before { background: linear-gradient(90deg, #7C3AED, #A78BFA); }
+    .curr-card.c1::before { background: linear-gradient(90deg, #6366F1, #A5B4FC); }
     .curr-card.c2::before { background: linear-gradient(90deg, #EC4899, #F59E0B); }
     .curr-card.c3::before { background: linear-gradient(90deg, #2DD4BF, #7C3AED); }
     .curr-card.c4::before { background: linear-gradient(90deg, #F59E0B, #EC4899); }
@@ -1705,42 +1730,40 @@
       <!-- 일러스트 래퍼 -->
       <div class="hero-illust-wrap">
 
-        <!-- AI 툴 뱃지들 - 프리미엄 글래스모피즘 -->
+        <!-- AI 툴 뱃지들 - 실제 로고 이미지 + 프리미엄 글래스모피즘 -->
         <div class="ai-badge badge-gemini">
           <div class="ai-badge-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z" fill="white"/>
-            </svg>
+            <img src="logo_gemini.png" alt="Gemini" />
           </div>
-          <span>Gemini AI</span>
+          <span>Geimini</span>
         </div>
 
         <div class="ai-badge badge-chatgpt">
           <div class="ai-badge-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
-              <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/>
-            </svg>
+            <img src="logo_chatgpt.png" alt="ChatGPT" />
           </div>
           <span>ChatGPT</span>
         </div>
 
         <div class="ai-badge badge-canva">
           <div class="ai-badge-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
-              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248c-.457 0-.87.189-1.17.494l-2.667 2.667-1.333-1.333c.305-.3.494-.713.494-1.17 0-.91-.738-1.648-1.648-1.648-.91 0-1.648.738-1.648 1.648 0 .457.189.87.494 1.17L8.75 12.41l-2.667-2.667c-.3-.305-.713-.494-1.17-.494-.91 0-1.648.738-1.648 1.648 0 .91.738 1.648 1.648 1.648.457 0 .87-.189 1.17-.494l2.667 2.667-2.667 2.667c-.3.3-.494.713-.494 1.17 0 .91.738 1.648 1.648 1.648.91 0 1.648-.738 1.648-1.648 0-.457-.189-.87-.494-1.17l2.667-2.667 1.333 1.333c-.305.3-.494.713-.494 1.17 0 .91.738 1.648 1.648 1.648.91 0 1.648-.738 1.648-1.648 0-.457-.189-.87-.494-1.17l1.333-1.333 2.667 2.667c.3.305.713.494 1.17.494.91 0 1.648-.738 1.648-1.648 0-.91-.738-1.648-1.648-1.648-.457 0-.87.189-1.17.494l-2.667-2.667 2.667-2.667c.3-.3.494-.713.494-1.17 0-.91-.738-1.648-1.648-1.648z"/>
-            </svg>
+            <img src="logo_canva.png" alt="Canva" />
           </div>
           <span>Canva AI</span>
         </div>
 
-        <div class="ai-badge badge-income">
-          <div class="ai-badge-icon">💰</div>
-          <span>수익 창출</span>
+        <div class="ai-badge badge-claude">
+          <div class="ai-badge-icon">
+            <img src="logo_claude.png" alt="Claude" />
+          </div>
+          <span>Claude</span>
         </div>
 
-        <div class="ai-badge badge-book">
-          <div class="ai-badge-icon">📖</div>
-          <span>AI 그림책 출판</span>
+        <div class="ai-badge badge-midjourney">
+          <div class="ai-badge-icon">
+            <img src="logo_midjourney.png" alt="Midjourney" />
+          </div>
+          <span>Midjourney</span>
         </div>
 
         <!-- 메인 일러스트 이미지 -->
