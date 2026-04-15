@@ -11,26 +11,26 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --primary: #6366F1;
-      --primary-light: #A5B4FC;
-      --primary-dark: #4338CA;
+      --primary: #5B21B6;
+      --primary-light: #7C3AED;
+      --primary-dark: #4C1D95;
       --accent: #F97316;
       --accent2: #EC4899;
-      --bg-dark: #0F0F1A;
-      --bg-card: #16162A;
-      --bg-card2: #1C1C35;
-      --text-main: #F0F0FF;
-      --text-sub: #C7C9F0;
-      --text-muted: #9899C8;
-      --gold: #FBBF24;
-      --teal: #34D399;
+      --bg-dark: #F0EDFF;
+      --bg-card: #FFFFFF;
+      --bg-card2: #EDE9FF;
+      --text-main: #1E1040;
+      --text-sub: #5B4A8A;
+      --text-muted: #7C6FA0;
+      --gold: #D97706;
+      --teal: #059669;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Noto Sans KR', sans-serif;
-      background: var(--bg-dark);
+      background: #F0EDFF;
       color: var(--text-main);
       line-height: 1.7;
       overflow-x: hidden;
@@ -41,7 +41,7 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(10, 10, 24, 0.88);
+      background: rgba(240, 237, 255, 0.95);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(99, 102, 241, 0.25);
       padding: 14px 5%;
@@ -58,14 +58,14 @@
       letter-spacing: -0.5px;
     }
     nav a {
-      color: var(--text-sub);
+      color: var(--primary);
       text-decoration: none;
       font-size: 0.85rem;
-      font-weight: 500;
+      font-weight: 600;
       margin-left: 24px;
       transition: color 0.2s;
     }
-    nav a:hover { color: #fff; }
+    nav a:hover { color: var(--primary-light); }
     .nav-cta {
       background: linear-gradient(135deg, var(--primary), var(--accent2));
       color: #fff !important;
@@ -115,17 +115,17 @@
       overflow: hidden;
     }
 
-    /* 메쉬 그라디언트 배경 */
+    /* 메쉬 그라디언트 배경 - 밝은 라벤더 */
     .hero::before {
       content: '';
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 70% 80% at 15% 50%, rgba(99,102,241,0.5) 0%, transparent 65%),
-        radial-gradient(ellipse 60% 60% at 85% 20%, rgba(249,115,22,0.25) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 50% at 80% 80%, rgba(52,211,153,0.18) 0%, transparent 55%),
-        radial-gradient(ellipse 40% 40% at 50% 100%, rgba(99,102,241,0.28) 0%, transparent 60%),
-        #0A0A18;
+        radial-gradient(ellipse 70% 80% at 15% 50%, rgba(167,139,250,0.35) 0%, transparent 65%),
+        radial-gradient(ellipse 60% 60% at 85% 20%, rgba(249,115,22,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 80% 80%, rgba(236,72,153,0.15) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 40% at 50% 100%, rgba(124,58,237,0.2) 0%, transparent 60%),
+        #F0EDFF;
       animation: meshMove 12s ease-in-out infinite;
     }
 
@@ -135,9 +135,9 @@
       filter: blur(90px);
       animation: float 8s ease-in-out infinite;
     }
-    .hero-orb-1 { width: 600px; height: 600px; background: rgba(99,102,241,0.28); top: -150px; left: -150px; animation-delay: 0s; }
-    .hero-orb-2 { width: 450px; height: 450px; background: rgba(249,115,22,0.18); bottom: -100px; right: -100px; animation-delay: 3s; }
-    .hero-orb-3 { width: 350px; height: 350px; background: rgba(52,211,153,0.12); top: 30%; left: 55%; animation-delay: 5s; }
+    .hero-orb-1 { width: 600px; height: 600px; background: rgba(167,139,250,0.22); top: -150px; left: -150px; animation-delay: 0s; }
+    .hero-orb-2 { width: 450px; height: 450px; background: rgba(249,115,22,0.14); bottom: -100px; right: -100px; animation-delay: 3s; }
+    .hero-orb-3 { width: 350px; height: 350px; background: rgba(236,72,153,0.12); top: 30%; left: 55%; animation-delay: 5s; }
 
     /* 2단 레이아웃 */
     .hero-inner {
@@ -714,15 +714,16 @@
       margin-top: 44px;
     }
     .tool-category {
-      background: var(--bg-card);
-      border: 1px solid rgba(99,102,241,0.2);
+      background: #FFFFFF;
+      border: 1px solid rgba(124,58,237,0.15);
       border-radius: 16px;
       padding: 22px 20px;
       transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 16px rgba(124,58,237,0.08);
     }
     .tool-category:hover {
       transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(99,102,241,0.2);
+      box-shadow: 0 16px 40px rgba(124,58,237,0.18);
     }
     .tool-cat-header {
       display: flex;
@@ -730,13 +731,13 @@
       gap: 10px;
       margin-bottom: 14px;
       padding-bottom: 12px;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
+      border-bottom: 1px solid rgba(124,58,237,0.1);
     }
     .tool-cat-icon { font-size: 1.4rem; }
     .tool-cat-title {
       font-size: 0.95rem;
       font-weight: 700;
-      color: #fff;
+      color: var(--text);
     }
     .tool-cat-pills {
       display: flex;
@@ -768,13 +769,13 @@
       white-space: nowrap;
     }
     .curr-step-label {
-      color: #fff;
+      color: var(--text);
       font-weight: 700;
       font-size: 0.78rem;
       white-space: nowrap;
     }
     .curr-step-desc {
-      color: var(--text-sub);
+      color: #5B4A8A;
       font-size: 0.78rem;
       line-height: 1.5;
     }
@@ -1136,6 +1137,11 @@
       align-items: flex-start;
       max-width: 900px;
       margin: 0 auto;
+      background: #FFFFFF;
+      border-radius: 28px;
+      padding: 40px;
+      box-shadow: 0 12px 48px rgba(124,58,237,0.12);
+      border: 1px solid rgba(124,58,237,0.1);
     }
     .instructor-compact .instructor-photo-col {
       flex-shrink: 0;
@@ -1144,12 +1150,12 @@
     .instructor-compact-info h3 {
       font-size: 1.6rem;
       font-weight: 800;
-      color: #fff;
+      color: var(--text);
       margin-bottom: 12px;
     }
     .instructor-compact-desc {
       font-size: 0.93rem;
-      color: var(--text-sub);
+      color: #5B4A8A;
       line-height: 1.8;
       margin-bottom: 20px;
     }
@@ -1189,7 +1195,7 @@
     }
 
     /* ─── INSTRUCTOR ─── */
-    .instructor-section { background: var(--bg-dark); }
+    .instructor-section { background: linear-gradient(135deg, #F5F0FF 0%, #EEF2FF 50%, #FDF4FF 100%); padding: 80px 5%; }
     .instructor-wrap {
       max-width: 1100px;
       margin: 60px auto 0;
@@ -1216,16 +1222,17 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, transparent 50%, rgba(15,10,30,0.7) 100%);
+      background: linear-gradient(180deg, transparent 40%, rgba(91,33,182,0.75) 100%);
       z-index: 1;
     }
     .instructor-photo-frame::after {
       content: '';
       position: absolute;
-      inset: -2px;
-      border-radius: 30px;
-      background: linear-gradient(135deg, var(--primary), var(--accent2), var(--accent));
+      inset: -4px;
+      border-radius: 32px;
+      background: linear-gradient(135deg, #7C3AED 0%, #EC4899 50%, #F97316 100%);
       z-index: -1;
+      box-shadow: 0 8px 32px rgba(124,58,237,0.35), 0 4px 16px rgba(249,115,22,0.2);
     }
     .instructor-name-plate {
       position: absolute;
@@ -1762,7 +1769,7 @@
         <span class="hero-price-main">₩150,000</span>
         <span class="hero-price-badge">🔥 EARLY BIRD</span>
       </div>
-      <p class="hero-price-note">얼리버드 특가 4월 17일(목)까지 · 이후 정가 20만원</p>
+      <p class="hero-price-note">얼리버드 특가 4월 20일(일)까지 · 이후 정가 20만원</p>
 
       <!-- CTA 버튼 -->
       <div class="btn-group" style="margin-top:28px;">
@@ -1859,7 +1866,7 @@
 <div class="divider"></div>
 
 <!-- INSTRUCTOR -->
-<section class="instructor-section" id="instructor">
+<section class="instructor-section" id="instructor" style="background: linear-gradient(135deg, #F5F0FF 0%, #EEF2FF 50%, #FDF4FF 100%) !important; padding: 80px 5%;">
   <div class="center fade-up">
     <span class="section-label">INSTRUCTOR</span>
     <h2 class="section-title">강사 소개</h2>
@@ -1996,12 +2003,12 @@
         <div class="curr-step">
           <span class="curr-step-time">10분</span>
           <span class="curr-step-label">플랫폼 소개</span>
-          <span class="curr-step-desc">Lovable · Claude · ChatGPT · Gemini — 바이브코딩 툴 비교 및 활용 사례</span>
+          <span class="curr-step-desc">Opal · Claude · Genspark · 바이브코딩 개념 — 툴 비교 및 활용 사례 (Lovable 포함)</span>
         </div>
         <div class="curr-step">
           <span class="curr-step-time">15분</span>
           <span class="curr-step-label">제작 방법</span>
-          <span class="curr-step-desc">원하는 기능을 말로 설명하는 프롬프트 기술 → Lovable 단계별 흐름 → 무료 배포</span>
+          <span class="curr-step-desc">원하는 기능을 말로 설명하는 프롬프트 기술 → Opal/Claude 단계별 흐름 → 무료 배포</span>
         </div>
         <div class="curr-step">
           <span class="curr-step-time">20분</span>
@@ -2015,10 +2022,11 @@
         </div>
       </div>
       <div class="curr-tags">
-        <span class="tag t-teal">Lovable</span>
+        <span class="tag t-teal">Opal</span>
         <span class="tag t-teal">Claude</span>
-        <span class="tag t-teal">ChatGPT</span>
+        <span class="tag t-teal">Genspark</span>
         <span class="tag t-teal">바이브코딩</span>
+        <span class="tag t-teal">Lovable</span>
         <span class="tag t-teal">무료 배포</span>
       </div>
     </div>
@@ -2066,7 +2074,7 @@
 <div class="divider"></div>
 
 <!-- WHAT YOU LEARN -->
-<section id="benefits">
+<section id="benefits" style="background: linear-gradient(180deg, #EEF2FF 0%, #F5F0FF 100%); padding: 80px 5%;">
   <div class="center fade-up">
     <span class="section-label">WHAT YOU GET</span>
     <h2 class="section-title"><span class="section-title-accent">이 과정을 수강하면</span><br/>이런 것들을 얻어가요</h2>
@@ -2142,7 +2150,7 @@
       <div class="tl-content">
         <div class="tl-date">3회차 · 2025년 5월 8일 (금) 저녁 8시</div>
         <h4>바이브코딩으로 웹앱 만들기</h4>
-        <p>Lovable · Claude · ChatGPT 바이브코딩 툴 소개 / 프롬프트로 웹앱 만들기 / 무료 배포까지 실습 / <strong>과제: 나만의 1페이지 웹사이트 URL 제출</strong></p>
+        <p>Opal · Claude · Genspark 바이브코딩 툴 소개 / 프롬프트로 웹앱 만들기 / 무료 배포까지 실습 / <strong>과제: 나만의 1페이지 웹사이트 URL 제출</strong></p>
       </div>
     </div>
     <div class="tl-item fade-up">
@@ -2167,7 +2175,7 @@
 <div class="divider"></div>
 
 <!-- FOR WHOM -->
-<section id="target">
+<section id="target" style="background: #F8F5FF; padding: 80px 5%;">
   <div class="center fade-up">
     <span class="section-label">FOR WHOM</span>
     <h2 class="section-title">이런 분들께 딱 맞는 과정입니다</h2>
@@ -2263,10 +2271,10 @@
         <span class="tool-cat-title">바이브코딩 (웹앱)</span>
       </div>
       <div class="tool-cat-pills">
-        <div class="tool-pill"><span class="dot" style="background:#34D399;"></span> Lovable (러버블)</div>
+        <div class="tool-pill"><span class="dot" style="background:#6366F1;"></span> Opal</div>
         <div class="tool-pill"><span class="dot" style="background:#CD643C;"></span> Claude (클로드)</div>
-        <div class="tool-pill"><span class="dot" style="background:#10A37F;"></span> ChatGPT</div>
-        <div class="tool-pill"><span class="dot" style="background:#4285F4;"></span> Gemini</div>
+        <div class="tool-pill"><span class="dot" style="background:#A78BFA;"></span> Genspark (젠스파크)</div>
+        <div class="tool-pill"><span class="dot" style="background:#34D399;"></span> Lovable (러버블)</div>
       </div>
     </div>
 
@@ -2292,7 +2300,7 @@
 <div class="divider"></div>
 
 <!-- PRICING -->
-<section id="pricing">
+<section id="pricing" style="background: linear-gradient(180deg, #F5F0FF 0%, #EDE9FF 100%);">
   <div class="center fade-up">
     <span class="section-label">PRICING</span>
     <h2 class="section-title">수강료 안내</h2>
@@ -2305,10 +2313,10 @@
       <div>
         <div class="eb-label">🔥 EARLY BIRD</div>
         <div class="eb-price">₩150,000</div>
-        <div class="eb-deadline">4월 17일(목)까지 · VAT 포함</div>
+        <div class="eb-deadline">4월 20일(일)까지 · VAT 포함</div>
       </div>
     </div>
-    <div class="price-main-label">* 4월 18일 이후 정가 ₩200,000 적용</div>
+    <div class="price-main-label">* 4월 21일 이후 정가 ₩200,000 적용</div>
     <ul class="pricing-list">
       <li><span class="check">✓</span><div>ZOOM 라이브 수업 <strong>총 4회</strong> (매주 금요일 저녁 8시)</div></li>
       <li><span class="check">✓</span><div>수업 후 <strong>녹화본 제공</strong> (무제한 복습)</div></li>
@@ -2326,7 +2334,7 @@
 <div class="divider"></div>
 
 <!-- FAQ -->
-<section style="background: var(--bg-card);" id="faq">
+<section style="background: linear-gradient(180deg, #EDE9FF 0%, #F0EDFF 100%);" id="faq">
   <div class="center fade-up">
     <span class="section-label">FAQ</span>
     <h2 class="section-title">자주 묻는 질문</h2>
