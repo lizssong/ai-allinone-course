@@ -626,6 +626,18 @@
     flex-shrink: 0;
   }
   .sched-info {}
+  .sched-badge-live {
+    display: inline-block; background: rgba(239,68,68,0.2); color: #FCA5A5;
+    font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 20px;
+    border: 1px solid rgba(239,68,68,0.4); margin-left: 6px; vertical-align: middle;
+  }
+  .sched-badge-rec {
+    display: inline-block; background: rgba(99,102,241,0.2); color: #A5B4FC;
+    font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 20px;
+    border: 1px solid rgba(99,102,241,0.4); margin-left: 6px; vertical-align: middle;
+  }
+  .curr-live { background: linear-gradient(135deg, rgba(124,58,237,0.5), rgba(236,72,153,0.3)) !important; }
+  .curr-recorded { background: linear-gradient(135deg, rgba(99,102,241,0.5), rgba(59,130,246,0.3)) !important; }
   .sched-title { font-size: 1.15rem; font-weight: 800; color: var(--white); margin-bottom: 6px; }
   .sched-date { font-size: 0.9rem; color: rgba(255,255,255,0.55); margin-bottom: 8px; }
   .sched-tools { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -929,8 +941,8 @@
 <div class="stats-bar">
   <div class="stats-inner">
     <div class="stat-item">
-      <div class="stat-num">4회</div>
-      <div class="stat-label">ZOOM 라이브 수업</div>
+      <div class="stat-num">5회</div>
+      <div class="stat-label">4라이브+1녹화본</div>
     </div>
     <div class="stat-item">
       <div class="stat-num">3종</div>
@@ -988,24 +1000,24 @@
 <section class="curriculum-section" id="curriculum">
   <div class="section-inner">
     <div class="section-tag">Curriculum</div>
-    <h2 class="section-title">4주 완성 AI 올인원 과정</h2>
-    <p class="section-sub">매 차시 60분 구성 — 플랫폼 소개 → 제작 방법 → 라이브 시연 → 실습 과제</p>
+    <h2 class="section-title">5회 완성 AI 올인원 과정</h2>
+    <p class="section-sub">4회 라이브 + 1회 녹화본 — 매 차시 60분 구성</p>
 
     <div class="curriculum-grid">
       <!-- 1회차 -->
       <div class="curr-card">
-        <div class="curr-header">
-          <div class="curr-num">1회차 · 4월 24일 (금)</div>
-          <div class="curr-title">📚 AI로 그림책 만들기</div>
-          <div class="curr-date">2025년 4월 24일 (금) 저녁 8시 · ZOOM</div>
-          <div class="curr-desc">AI 이미지 생성 툴로 나만의 그림책을 완성합니다. 스토리 기획부터 이미지 생성, 캔바 레이아웃까지!</div>
+        <div class="curr-header curr-live">
+          <div class="curr-num">1회차 · 4월 24일 (금) 🔴 라이브</div>
+          <div class="curr-title">📚 AI 그림체 만들기</div>
+          <div class="curr-date">2025년 4월 24일 (금) 저녁 8시 · ZOOM 라이브</div>
+          <div class="curr-desc">AI 이미지 생성 툴로 나만의 그림체를 완성합니다. 스토리 기획부터 이미지 생성, 캐린바 레이아웃까지!</div>
         </div>
         <div class="curr-body">
           <ul class="curr-timeline">
             <li><span class="curr-time">10분</span><span><strong>플랫폼 소개</strong> — Gemini · Genspark · Dzine 비교 가이드</span></li>
             <li><span class="curr-time">15분</span><span><strong>제작 방법</strong> — 스토리 기획 → 일관된 캐릭터 프롬프트 전략</span></li>
-            <li><span class="curr-time">20분</span><span><strong>라이브 시연</strong> — 이미지 생성 → 캔바 편집 → 그림책 완성</span></li>
-            <li><span class="curr-time">15분</span><span><strong>실습 과제</strong> — 8페이지 이상 나만의 그림책 1권 완성</span></li>
+            <li><span class="curr-time">20분</span><span><strong>라이브 시연</strong> — 이미지 생성 → 캐린바 편집 → 그림체 완성</span></li>
+            <li><span class="curr-time">15분</span><span><strong>실습 과제</strong> — 8페이지 이상 나만의 그림체 1권 완성</span></li>
           </ul>
         </div>
         <div class="curr-tools">
@@ -1016,19 +1028,42 @@
         </div>
       </div>
 
-      <!-- 2회차 -->
+      <!-- 2회차 녹화본 -->
       <div class="curr-card">
-        <div class="curr-header">
-          <div class="curr-num">2회차 · 5월 1일 (금)</div>
-          <div class="curr-title">🎨 AI 아트 만들기</div>
-          <div class="curr-date">2025년 5월 1일 (금) 저녁 8시 · ZOOM</div>
+        <div class="curr-header curr-recorded">
+          <div class="curr-num">2회차 · 5월 1일 (금) 📹 녹화본</div>
+          <div class="curr-title">✨ 최신 AI 활용법</div>
+          <div class="curr-date">2025년 5월 1일 (금) · 녹화본 제공</div>
+          <div class="curr-desc">최신 AI 툴의 트렌드와 활용법을 업데이트합니다. 언제든지 편한 시간에 시청할 수 있는 녹화본 강의입니다.</div>
+        </div>
+        <div class="curr-body">
+          <ul class="curr-timeline">
+            <li><span class="curr-time">20분</span><span><strong>최신 AI 트렌드</strong> — 2025년 주목해야 할 AI 툴 토탈 소개</span></li>
+            <li><span class="curr-time">20분</span><span><strong>실전 활용법</strong> — 각 툴별 핵심 기능 데모 및 비교</span></li>
+            <li><span class="curr-time">20분</span><span><strong>나에게 맞는 AI 툴 찾기</strong> — 목적별 최적 툴 선택 가이드</span></li>
+          </ul>
+        </div>
+        <div class="curr-tools">
+          <span class="curr-tool-tag">Gemini</span>
+          <span class="curr-tool-tag">ChatGPT</span>
+          <span class="curr-tool-tag">Claude</span>
+          <span class="curr-tool-tag">Genspark</span>
+        </div>
+      </div>
+
+      <!-- 3회차 -->
+      <div class="curr-card">
+        <div class="curr-header curr-live">
+          <div class="curr-num">3회차 · 5월 8일 (금) 🔴 라이브</div>
+          <div class="curr-title">🎨 AI 아트 디자인</div>
+          <div class="curr-date">2025년 5월 8일 (금) 저녁 8시 · ZOOM 라이브</div>
           <div class="curr-desc">AI로 나만의 디지털 아트 작품을 만들고 온라인 전시회를 준비합니다. 나만의 아트 스타일을 찾아보세요!</div>
         </div>
         <div class="curr-body">
           <ul class="curr-timeline">
             <li><span class="curr-time">10분</span><span><strong>플랫폼 소개</strong> — Dzine · Dreammina · Genspark 스타일별 가이드</span></li>
             <li><span class="curr-time">15분</span><span><strong>제작 방법</strong> — 무드보드 → 프롬프트 변환 → 시리즈 일관성 유지</span></li>
-            <li><span class="curr-time">20분</span><span><strong>라이브 시연</strong> — AI 아트 5점 생성 → 캔바 전시 포스터 완성</span></li>
+            <li><span class="curr-time">20분</span><span><strong>라이브 시연</strong> — AI 아트 5점 생성 → 캐린바 전시 포스터 완성</span></li>
             <li><span class="curr-time">15분</span><span><strong>실습 과제</strong> — AI 아트 10점 + 전시 포스터 1장 제작</span></li>
           </ul>
         </div>
@@ -1040,13 +1075,13 @@
         </div>
       </div>
 
-      <!-- 3회차 -->
+      <!-- 4회차 -->
       <div class="curr-card">
-        <div class="curr-header">
-          <div class="curr-num">3회차 · 5월 8일 (금)</div>
+        <div class="curr-header curr-live">
+          <div class="curr-num">4회차 · 5월 15일 (금) 🔴 라이브</div>
           <div class="curr-title">💻 바이브코딩으로 웹앱 만들기</div>
-          <div class="curr-date">2025년 5월 8일 (금) 저녁 8시 · ZOOM</div>
-          <div class="curr-desc">코딩 몰라도 OK! AI 프롬프트만으로 나만의 웹앱·랜딩페이지를 뚝딱 만들고 바로 배포합니다.</div>
+          <div class="curr-date">2025년 5월 15일 (금) 저녁 8시 · ZOOM 라이브</div>
+          <div class="curr-desc">코딩 몰라도 OK! AI 프롬프트만으로 나만의 웹앱·랜딩페이지를 똑딹 만들고 바로 배포합니다.</div>
         </div>
         <div class="curr-body">
           <ul class="curr-timeline">
@@ -1063,26 +1098,25 @@
         </div>
       </div>
 
-      <!-- 4회차 -->
+      <!-- 5회차 -->
       <div class="curr-card">
-        <div class="curr-header">
-          <div class="curr-num">4회차 · 5월 15일 (금)</div>
+        <div class="curr-header curr-live">
+          <div class="curr-num">5회차 · 5월 29일 (금) 🔴 라이브</div>
           <div class="curr-title">🎬 AI로 영상 만들기</div>
-          <div class="curr-date">2025년 5월 15일 (금) 저녁 8시 · ZOOM</div>
-          <div class="curr-desc">AI 영상 툴로 SNS 콘텐츠 영상을 완성합니다. 1~3회차 작품을 영상으로 연결해 수익화까지!</div>
+          <div class="curr-date">2025년 5월 29일 (금) 저녁 8시 · ZOOM 라이브</div>
+          <div class="curr-desc">AI 영상 툴로 SNS 콘텐츠 영상을 완성합니다. 1~4회차 작품을 영상으로 연결해 수익화까지!</div>
         </div>
         <div class="curr-body">
           <ul class="curr-timeline">
             <li><span class="curr-time">10분</span><span><strong>플랫폼 소개</strong> — Kling · Dreammina · Vrew 가이드</span></li>
             <li><span class="curr-time">15분</span><span><strong>제작 방법</strong> — AI 이미지 → 영상 변환 → Vrew 자막 → 숏폼 최적화</span></li>
-            <li><span class="curr-time">20분</span><span><strong>라이브 시연</strong> — 그림책 이미지 → AI 영상 → SNS 업로드 최적화</span></li>
+            <li><span class="curr-time">20분</span><span><strong>라이브 시연</strong> — 그림체 이미지 → AI 영상 → SNS 업로드 최적화</span></li>
             <li><span class="curr-time">15분</span><span><strong>최종 과제 + 수료</strong> — AI 영상 1편 + 수익화 전략 Q&A</span></li>
           </ul>
         </div>
         <div class="curr-tools">
           <span class="curr-tool-tag">Kling</span>
           <span class="curr-tool-tag">Dreammina</span>
-          
           <span class="curr-tool-tag">Vrew</span>
         </div>
       </div>
@@ -1171,7 +1205,7 @@
         <div class="instructor-role">AI 융합 콘텐츠 전문가</div>
         <div class="instructor-name">쏭리즈 민경쌤 ✨</div>
         <p class="instructor-bio">
-          생성형 AI · 캔바 · 캐릭터이모티콘디자인을 초중학생부터 교사, 기업까지 강의하는 AI 융합 콘텐츠 전문 강사입니다. AI 아트 작가로 전시회도 개최하며, 수퍼톤 공식 앰배서더이자 아바톡 크리퐁 앰배서더로 활동 중입니다. 크리메타쏭 대표 · 캔바 지국장을 맡고 있으며, 5권의 책을 출판한 저자입니다.
+          생성형 AI · 캔바 · 캐릭터이모티콘디자인을 초중학생부터 교사, 기업까지 강의하는 AI 융합 콘텐츠 전문 강사입니다. AI 아트 작가로 전시회도 개최하며, 수퍼톤 공식 앤배서더로 활동 중이며, AI 수석연구원으로 재직 중입니다. 크리메타쏭 대표 · 캔바 지국장을 맡고 있으며, 5권의 책을 출판한 저자입니다.
         </p>
         <div class="instructor-badges">
           <span class="inst-badge">📖 5권 출판 작가</span>
@@ -1179,7 +1213,7 @@
           <span class="inst-badge">🎨 AI 아트 전시회</span>
           <span class="inst-badge">📢 캔바 지국장</span>
           <span class="inst-badge">🎙️ 수퍼톤 앰배서더</span>
-          <span class="inst-badge">🤖 아바톡 크리퐁 앰배서더</span>
+          <span class="inst-badge">🔬 AI 수석연구원</span>
         </div>
         <div class="books-title">저서</div>
         <div class="books-list">
@@ -1228,12 +1262,12 @@
   <div class="section-inner">
     <div class="section-tag">Schedule</div>
     <h2 class="section-title">수업 일정</h2>
-    <p class="section-sub">총 4회 ZOOM 라이브 수업 + 녹화본 무제한 제공 + 영상 피드백 1회</p>
+    <p class="section-sub">라이브 4회 + 녹화본 1회 · 녹화본 무제한 제공 + 영상 피드백 1회</p>
     <div class="schedule-list">
       <div class="sched-item">
         <div class="sched-num">1</div>
         <div class="sched-info">
-          <div class="sched-title">📚 AI로 그림책 만들기</div>
+          <div class="sched-title">📚 AI 그림책 만들기 <span class="sched-badge-live">🔴 라이브</span></div>
           <div class="sched-date">2025년 4월 24일 (금) 저녁 8시 · ZOOM</div>
           <div class="sched-tools">
             <span class="sched-tool">Gemini</span>
@@ -1246,8 +1280,21 @@
       <div class="sched-item">
         <div class="sched-num">2</div>
         <div class="sched-info">
-          <div class="sched-title">🎨 AI 아트 만들기</div>
-          <div class="sched-date">2025년 5월 1일 (금) 저녁 8시 · ZOOM</div>
+          <div class="sched-title">✨ 최신 AI 활용법 <span class="sched-badge-rec">📹 녹화본</span></div>
+          <div class="sched-date">2025년 5월 1일 (금) · 녹화본 제공</div>
+          <div class="sched-tools">
+            <span class="sched-tool">Gemini</span>
+            <span class="sched-tool">ChatGPT</span>
+            <span class="sched-tool">Claude</span>
+          </div>
+        </div>
+        <div class="sched-task">언제든지 시청 가능</div>
+      </div>
+      <div class="sched-item">
+        <div class="sched-num">3</div>
+        <div class="sched-info">
+          <div class="sched-title">🎨 AI 아트 디자인 <span class="sched-badge-live">🔴 라이브</span></div>
+          <div class="sched-date">2025년 5월 8일 (금) 저녁 8시 · ZOOM</div>
           <div class="sched-tools">
             <span class="sched-tool">Dzine</span>
             <span class="sched-tool">Dreammina</span>
@@ -1257,10 +1304,10 @@
         <div class="sched-task">과제: AI 아트 10점</div>
       </div>
       <div class="sched-item">
-        <div class="sched-num">3</div>
+        <div class="sched-num">4</div>
         <div class="sched-info">
-          <div class="sched-title">💻 바이브코딩으로 웹앱 만들기</div>
-          <div class="sched-date">2025년 5월 8일 (금) 저녁 8시 · ZOOM</div>
+          <div class="sched-title">💻 AI 웹앱 만들기 <span class="sched-badge-live">🔴 라이브</span></div>
+          <div class="sched-date">2025년 5월 15일 (금) 저녁 8시 · ZOOM</div>
           <div class="sched-tools">
             <span class="sched-tool">Opal</span>
             <span class="sched-tool">Claude</span>
@@ -1270,13 +1317,13 @@
         <div class="sched-task">과제: 웹사이트 URL</div>
       </div>
       <div class="sched-item">
-        <div class="sched-num">4</div>
+        <div class="sched-num">5</div>
         <div class="sched-info">
-          <div class="sched-title">🎬 AI로 영상 만들기 + 수료</div>
-          <div class="sched-date">2025년 5월 15일 (금) 저녁 8시 · ZOOM</div>
+          <div class="sched-title">🎬 AI 영상 만들기 + 수료 <span class="sched-badge-live">🔴 라이브</span></div>
+          <div class="sched-date">2025년 5월 29일 (금) 저녁 8시 · ZOOM</div>
           <div class="sched-tools">
             <span class="sched-tool">Kling</span>
-            
+            <span class="sched-tool">Dreammina</span>
             <span class="sched-tool">Vrew</span>
           </div>
         </div>
@@ -1335,7 +1382,7 @@
 
     <div class="pricing-card">
       <div class="pricing-header">
-        <h3>AI 올인원 과정 · 4회 완성</h3>
+        <h3>AI 올인원 과정 · 5회 완성</h3>
         <p>그림책 · AI 아트 · 바이브코딩 웹앱 · AI 영상</p>
       </div>
       <div class="pricing-body">
@@ -1346,7 +1393,7 @@
         </div>
         <div class="price-note">⏰ 얼리버드 특가 · <span>4월 21일(월) 자정까지</span></div>
         <ul class="include-list">
-          <li>ZOOM 라이브 수업 4회 (매주 금요일 저녁 8시)</li>
+          <li>ZOOM 라이브 수업 4회 + 녹화본 1회 (매주 금요일 저녁 8시)</li>
           <li>녹화본 무제한 제공 (영구 소장)</li>
           <li>1:1 영상 피드백 1회</li>
           <li>수료증 발급</li>
